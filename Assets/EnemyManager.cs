@@ -8,6 +8,12 @@ public class EnemyManager : MonoBehaviour
     public Image hpBar;
     public float maxHP;
     public float curHP;
+
+    public int _meleeCounter;
+
+    public int _heavyCounter;
+
+    [SerializeField] private ParticleSystem meleeKaboom;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +24,22 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
         hpBar.fillAmount = curHP / maxHP;
+    }
+
+    public void MeleeExplosion()
+    {
+        meleeKaboom.Play();
+    }
+
+    public void PlusOneMeleeAttack()
+    {
+        _meleeCounter += 1;
+        Debug.Log($"Melee Counter: {_meleeCounter}");
+    }
+
+    public void PlusOneHeavyAttack()
+    {
+        _heavyCounter += 1;
+        Debug.Log($"Heavy Counter: {_heavyCounter}");
     }
 }
