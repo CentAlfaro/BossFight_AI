@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,11 +19,13 @@ public class MonsterChaseState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.transform.LookAt(_player);
         _agent.destination = _player.position;
         
         float distance = Vector3.Distance(_player.position, animator.transform.position);
-        if (distance <= 5)
+        if (distance <= 4.5)
         {
+           
             animator.SetBool("IsMeleeAttack", true);
         }
     }

@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
     [Header("References")]
     private Rigidbody _rb;
     [SerializeField] public GameObject WeaponCollider;
-    [SerializeField] public MonsterScript currentMonster;
+    [SerializeField] public EnemyManager currentMonster;
     
 
 
