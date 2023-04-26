@@ -30,14 +30,15 @@ public class ChaseState : StateMachineBehaviour
         agent.SetDestination(player.position);
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
+        
         if (distance > 10)
         {
             animator.SetBool("isChasing", false);
         }
 
-        if (distance < 2)
+        if (distance < 3)
         {
-            animator.SetBool("isAttacking", true);
+            animator.SetBool("isMeleeAttack", true);
         }
     }
 
