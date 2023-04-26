@@ -21,12 +21,12 @@ namespace AnimationBehaviors.Monster
             
         
             float distance = Vector3.Distance(_player.position, animator.transform.position);
-            Debug.Log(distance);
-            if (distance >=14)
+            Debug.Log($"Player and Monster's Distance: {distance}");
+            if (distance >=13.5)
             {
                 _agent.destination = _player.position;
             }
-            else if (distance <14)
+            else if (distance <13)
             {
                 _agent.destination = animator.transform.position;
                 animator.SetBool("IsMeleeAttack", true);

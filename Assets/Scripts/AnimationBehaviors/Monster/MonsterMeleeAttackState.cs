@@ -22,7 +22,7 @@ namespace AnimationBehaviors.Monster
             animator.transform.rotation = Quaternion.Slerp(animator.transform.rotation, lookRotation, Time.deltaTime * 5f);
         
             float distance = Vector3.Distance(_player.position, animator.transform.position);
-            Debug.Log(distance);
+            Debug.Log($"Player and Monster's Distance: {distance}");
             if (distance >= 13.5f)
             {
                 animator.SetBool("IsMeleeAttack" ,false);
